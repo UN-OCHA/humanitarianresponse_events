@@ -77,7 +77,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '8',
+        'weight' => '26',
       ),
     ),
   );
@@ -147,7 +147,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '8',
       ),
     ),
   );
@@ -219,7 +219,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '9',
+        'weight' => '27',
       ),
     ),
   );
@@ -231,4 +231,19 @@ function humanitarianresponse_events_field_default_fields() {
   t('Minutes');
 
   return $fields;
+}
+
+function humanitarianresponse_events_field_default_fields_alter(&$fields) {
+  if (isset($fields['node-event-body'])) {
+    $fields['node-event-body']['field_instance']['widget']['weight'] = '25';
+  }
+  if (isset($fields['node-event-field_event_address'])) {
+    $fields['node-event-field_event_address']['field_instance']['widget']['weight'] = '6';
+  }
+  if (isset($fields['node-event-field_event_location'])) {
+    $fields['node-event-field_event_location']['field_instance']['widget']['weight'] = '7';
+  }
+  if (isset($fields['node-event-field_event_date'])) {
+    $fields['node-event-field_event_date']['field_instance']['widget']['weight'] = '5';
+  }
 }
