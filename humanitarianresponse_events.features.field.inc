@@ -147,7 +147,197 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_contact_email'
+  $fields['node-event-field_event_contact_email'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_contact_email',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'email',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'email',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'email',
+          'settings' => array(),
+          'type' => 'email_default',
+          'weight' => 9,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_contact_email',
+      'label' => 'Contact Email',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'email',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'email_textfield',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_contact_person'
+  $fields['node-event-field_event_contact_person'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_contact_person',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 7,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_contact_person',
+      'label' => 'Contact Person',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
         'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_contact_telephone'
+  $fields['node-event-field_event_contact_telephone'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_contact_telephone',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 8,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_contact_telephone',
+      'label' => 'Contact Telephone',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '9',
       ),
     ),
   );
@@ -228,6 +418,9 @@ function humanitarianresponse_events_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Agenda');
   t('Cluster(s)');
+  t('Contact Email');
+  t('Contact Person');
+  t('Contact Telephone');
   t('Minutes');
 
   return $fields;
@@ -239,11 +432,16 @@ function humanitarianresponse_events_field_default_fields_alter(&$fields) {
   }
   if (isset($fields['node-event-field_event_address'])) {
     $fields['node-event-field_event_address']['field_instance']['widget']['weight'] = '6';
+    $fields['node-event-field_event_address']['field_instance']['required'] = 1;
+    $fields['node-event-field_event_address']['field_instance']['widget']['settings']['format_handlers']['organisation'] = 'organisation';
   }
   if (isset($fields['node-event-field_event_location'])) {
     $fields['node-event-field_event_location']['field_instance']['widget']['weight'] = '7';
   }
   if (isset($fields['node-event-field_event_date'])) {
     $fields['node-event-field_event_date']['field_instance']['widget']['weight'] = '5';
+  }
+  if (isset($fields['node-event-field_event_category'])) {
+    $fields['node-event-field_event_category']['field_instance']['widget']['weight'] = '15';
   }
 }
