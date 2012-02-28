@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file Installs HumanitarianResponse Events
+ */
+
+/**
+ * Implements hook_install()
+ */
+function humanitarianresponse_events_install() {
+  
+  // ShareThis configuration
+  grupal_core_sharethis_configuration('buttons', 'stbc_');
+  grupal_core_sharethis_configuration('nodeType', 'event', FALSE);
+  grupal_core_sharethis_configuration('services', '"Google:google","Tweet:twitter","Facebook:facebook","ShareThis:sharethis"');
+}
+
