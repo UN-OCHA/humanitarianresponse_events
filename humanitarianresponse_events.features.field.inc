@@ -77,7 +77,7 @@ function humanitarianresponse_events_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '5',
+        'weight' => '1',
       ),
     ),
   );
@@ -150,7 +150,7 @@ function humanitarianresponse_events_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '6',
+        'weight' => '2',
       ),
     ),
   );
@@ -222,7 +222,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '26',
+        'weight' => '11',
       ),
     ),
   );
@@ -292,7 +292,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '10',
+        'weight' => '7',
       ),
     ),
   );
@@ -362,7 +362,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '8',
       ),
     ),
   );
@@ -416,7 +416,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '10',
+        'weight' => '6',
       ),
     ),
   );
@@ -484,7 +484,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '4',
       ),
     ),
   );
@@ -552,7 +552,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '9',
+        'weight' => '5',
       ),
     ),
   );
@@ -644,7 +644,77 @@ function humanitarianresponse_events_field_default_fields() {
           'year_range' => '-0:+5',
         ),
         'type' => 'date_popup',
-        'weight' => '15',
+        'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_event_hubs'
+  $fields['node-event-field_event_hubs'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_event_hubs',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'coordination_hubs',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 10,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_event_hubs',
+      'label' => 'Coordination Hub(s)',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '9',
       ),
     ),
   );
@@ -709,7 +779,7 @@ function humanitarianresponse_events_field_default_fields() {
           'geocoder_handler' => 'google',
         ),
         'type' => 'geocoder',
-        'weight' => '7',
+        'weight' => '3',
       ),
     ),
   );
@@ -781,7 +851,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '27',
+        'weight' => '12',
       ),
     ),
   );
@@ -796,6 +866,7 @@ function humanitarianresponse_events_field_default_fields() {
   t('Contact Email');
   t('Contact Person');
   t('Contact Telephone');
+  t('Coordination Hub(s)');
   t('Date');
   t('Location');
   t('Minutes');
