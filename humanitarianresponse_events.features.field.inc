@@ -77,7 +77,7 @@ function humanitarianresponse_events_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '3',
       ),
     ),
   );
@@ -147,7 +147,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '9',
       ),
     ),
   );
@@ -217,7 +217,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '10',
       ),
     ),
   );
@@ -290,7 +290,7 @@ function humanitarianresponse_events_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -362,7 +362,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -432,7 +432,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '2',
       ),
     ),
   );
@@ -486,7 +486,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'email_textfield',
-        'weight' => '6',
+        'weight' => '8',
       ),
     ),
   );
@@ -554,7 +554,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -622,7 +622,7 @@ function humanitarianresponse_events_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -714,7 +714,7 @@ function humanitarianresponse_events_field_default_fields() {
           'year_range' => '-0:+5',
         ),
         'type' => 'date_popup',
-        'weight' => '11',
+        'weight' => '1',
       ),
     ),
   );
@@ -779,7 +779,7 @@ function humanitarianresponse_events_field_default_fields() {
           'geocoder_handler' => 'google',
         ),
         'type' => 'geocoder',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -851,7 +851,7 @@ function humanitarianresponse_events_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
-        'weight' => '13',
+        'weight' => '12',
       ),
     ),
   );
