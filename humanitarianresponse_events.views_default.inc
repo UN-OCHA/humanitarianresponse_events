@@ -24,6 +24,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Events';
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -324,7 +325,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Cluster', 'panel_pane_1');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
-  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['link_url'] = 'taxonomy/term/!1/calendar';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
@@ -444,7 +444,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Coordination Hub', 'panel_pane_2');
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
-  $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'week';
@@ -687,6 +686,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['tid']['title_enable'] = 1;
   $handler->display->display_options['arguments']['tid']['title'] = '%1 Calendar';
+  $handler->display->display_options['arguments']['tid']['breadcrumb_enable'] = 1;
   $handler->display->display_options['arguments']['tid']['breadcrumb'] = '%1 Calendar';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['term_page'] = 1;
@@ -719,31 +719,6 @@ function humanitarianresponse_events_views_default_views() {
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
   $handler->display->display_options['path'] = 'taxonomy/term/%/calendar';
-  $translatables['events'] = array(
-    t('Master'),
-    t('Events'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('Page'),
-    t('Feed'),
-    t('Block'),
-    t('Upcoming events'),
-    t('There are no upcoming events to display'),
-    t('Calendar'),
-    t('All'),
-    t('Cluster'),
-    t('View panes'),
-    t('Coordination Hub'),
-    t('Calendar per term'),
-    t('%1 Calendar'),
-  );
   $export['events'] = $view;
 
   $view = new view;
@@ -761,6 +736,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['title'] = 'Meeting Minutes';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['use_more_text'] = 'View all';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -912,25 +888,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = 0;
   $handler->display->display_options['arguments']['tid']['set_breadcrumb'] = 0;
   $handler->display->display_options['path'] = 'taxonomy/term/%/meeting-minutes';
-  $translatables['meeting_minutes'] = array(
-    t('Master'),
-    t('Meeting Minutes'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Cluster'),
-    t('All'),
-    t('View panes'),
-    t('Coordination Hub'),
-    t('Meeting Minutes Per Term'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('%1 Meeting Minutes'),
-  );
   $export['meeting_minutes'] = $view;
 
   return $export;
