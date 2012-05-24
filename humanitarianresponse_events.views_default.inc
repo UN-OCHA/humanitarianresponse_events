@@ -83,14 +83,14 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'There are no events';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
-  $handler->display->display_options['path'] = 'media/events';
+  $handler->display->display_options['path'] = 'media-center/events';
 
   /* Display: Feed */
   $handler = $view->new_display('feed', 'Feed', 'feed');
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'rss';
   $handler->display->display_options['row_plugin'] = 'node_rss';
-  $handler->display->display_options['path'] = 'media/events/rss';
+  $handler->display->display_options['path'] = 'media-center/events/rss';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
     'page' => 'page',
