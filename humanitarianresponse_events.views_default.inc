@@ -56,7 +56,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -83,6 +82,41 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['empty']['area']['content'] = 'There are no events';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
   $handler->display->display_options['empty']['area']['tokenize'] = 0;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+  );
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster(s) (field_clusters)';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['reduce'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['reduce_duplicates'] = 0;
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['error_message'] = 1;
+  /* Filter criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
   $handler->display->display_options['path'] = 'media-center/events';
 
   /* Display: Feed */
@@ -383,6 +417,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['breadcrumb_enable'] = 1;
   $handler->display->display_options['arguments']['date_argument']['breadcrumb'] = '<none>';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = 0;
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
