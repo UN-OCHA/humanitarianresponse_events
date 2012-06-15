@@ -18,6 +18,7 @@ dependencies[] = hs_taxonomy
 dependencies[] = humanitarianresponse_clusters
 dependencies[] = humanitarianresponse_coordination
 dependencies[] = humanitarianresponse_mapping
+dependencies[] = i18n_taxonomy
 dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_content
