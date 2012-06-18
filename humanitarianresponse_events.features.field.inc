@@ -10,7 +10,7 @@
 function humanitarianresponse_events_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-event-body'
+  // Exported field: 'node-event-body'.
   $fields['node-event-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -82,7 +83,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_clusters'
+  // Exported field: 'node-event-field_clusters'.
   $fields['node-event-field_clusters'] = array(
     'field_config' => array(
       'active' => '1',
@@ -103,6 +104,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -111,6 +113,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -152,7 +155,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_coordination_hubs'
+  // Exported field: 'node-event-field_coordination_hubs'.
   $fields['node-event-field_coordination_hubs'] = array(
     'field_config' => array(
       'active' => '1',
@@ -173,6 +176,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -181,6 +185,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -222,7 +227,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_address'
+  // Exported field: 'node-event-field_event_address'.
   $fields['node-event-field_event_address'] = array(
     'field_config' => array(
       'active' => '1',
@@ -232,6 +237,7 @@ function humanitarianresponse_events_field_default_fields() {
       'field_name' => 'field_event_address',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'addressfield',
       'settings' => array(),
       'translatable' => '0',
@@ -295,7 +301,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_agenda'
+  // Exported field: 'node-event-field_event_agenda'.
   $fields['node-event-field_event_agenda'] = array(
     'field_config' => array(
       'active' => '1',
@@ -316,6 +322,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -367,7 +374,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_category'
+  // Exported field: 'node-event-field_event_category'.
   $fields['node-event-field_event_category'] = array(
     'field_config' => array(
       'active' => '1',
@@ -388,6 +395,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -396,6 +404,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -437,7 +446,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_contact_email'
+  // Exported field: 'node-event-field_event_contact_email'.
   $fields['node-event-field_event_contact_email'] = array(
     'field_config' => array(
       'active' => '1',
@@ -447,6 +456,7 @@ function humanitarianresponse_events_field_default_fields() {
       'field_name' => 'field_event_contact_email',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'email',
       'settings' => array(),
       'translatable' => '0',
@@ -491,7 +501,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_contact_person'
+  // Exported field: 'node-event-field_event_contact_person'.
   $fields['node-event-field_event_contact_person'] = array(
     'field_config' => array(
       'active' => '1',
@@ -512,6 +522,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -559,7 +570,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_contact_telephone'
+  // Exported field: 'node-event-field_event_contact_telephone'.
   $fields['node-event-field_event_contact_telephone'] = array(
     'field_config' => array(
       'active' => '1',
@@ -580,6 +591,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -627,7 +639,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_date'
+  // Exported field: 'node-event-field_event_date'.
   $fields['node-event-field_event_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -637,6 +649,7 @@ function humanitarianresponse_events_field_default_fields() {
       'field_name' => 'field_event_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'granularity' => array(
@@ -719,7 +732,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_map'
+  // Exported field: 'node-event-field_event_map'.
   $fields['node-event-field_event_map'] = array(
     'field_config' => array(
       'active' => '1',
@@ -729,6 +742,7 @@ function humanitarianresponse_events_field_default_fields() {
       'field_name' => 'field_event_map',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'geofield',
       'settings' => array(),
       'translatable' => '0',
@@ -794,7 +808,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_event_minutes'
+  // Exported field: 'node-event-field_event_minutes'.
   $fields['node-event-field_event_minutes'] = array(
     'field_config' => array(
       'active' => '1',
@@ -815,6 +829,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -866,7 +881,7 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-event-field_locations'
+  // Exported field: 'node-event-field_locations'.
   $fields['node-event-field_locations'] = array(
     'field_config' => array(
       'active' => '1',
@@ -887,6 +902,7 @@ function humanitarianresponse_events_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -895,6 +911,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
