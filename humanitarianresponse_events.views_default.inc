@@ -551,6 +551,29 @@ function humanitarianresponse_events_views_default_views() {
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
   $handler->display->display_options['block_description'] = 'Calendar per term';
+  $translatables['events'] = array(
+    t('Master'),
+    t('Events'),
+    t('View all'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('Page'),
+    t('more'),
+    t('There are no events'),
+    t('Cluster'),
+    t('Feed'),
+    t('Calendar'),
+    t('All'),
+    t('Calendar per term'),
+    t('<none>'),
+    t('Block per term'),
+  );
   $export['events'] = $view;
 
   $view = new view;
@@ -698,6 +721,25 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['reduce_duplicates'] = 0;
   $handler->display->display_options['arguments']['tid']['set_breadcrumb'] = 0;
   $handler->display->display_options['block_description'] = 'Meeting Minutes per term';
+  $translatables['meeting_minutes'] = array(
+    t('Master'),
+    t('Meeting Minutes'),
+    t('View all'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('There are no meeting minutes'),
+    t('Meeting Minutes Per Term'),
+    t('more'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('All'),
+    t('Block per term'),
+    t('Meeting Minutes per term'),
+  );
   $export['meeting_minutes'] = $view;
 
   return $export;
