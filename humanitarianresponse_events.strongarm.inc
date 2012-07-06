@@ -88,7 +88,11 @@ function humanitarianresponse_events_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '15',
+        ),
+      ),
       'display' => array(),
     ),
   );
