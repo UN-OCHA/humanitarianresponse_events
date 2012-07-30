@@ -19,6 +19,7 @@ dependencies[] = humanitarianresponse_clusters
 dependencies[] = humanitarianresponse_coordination
 dependencies[] = humanitarianresponse_emergencies
 dependencies[] = humanitarianresponse_mapping
+dependencies[] = hr_mapping_styles
 dependencies[] = invisimail
 dependencies[] = strongarm
 dependencies[] = title
