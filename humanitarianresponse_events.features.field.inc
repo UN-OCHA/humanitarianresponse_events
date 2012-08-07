@@ -52,6 +52,15 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'text_default',
           'weight' => '0',
         ),
+        'ical' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '2',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -130,6 +139,13 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '11',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '1',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -199,6 +215,12 @@ function humanitarianresponse_events_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
+          'weight' => '12',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '12',
         ),
         'teaser' => array(
@@ -275,6 +297,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => 18,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -340,6 +368,18 @@ function humanitarianresponse_events_field_default_fields() {
           ),
           'type' => 'addressfield_default',
           'weight' => '15',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'addressfield',
+          'settings' => array(
+            'format_handlers' => array(
+              0 => 'address',
+            ),
+            'use_widget_handlers' => 1,
+          ),
+          'type' => 'addressfield_default',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -415,6 +455,12 @@ function humanitarianresponse_events_field_default_fields() {
           'settings' => array(),
           'type' => 'file_default',
           'weight' => '4',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -493,6 +539,13 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '2',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '0',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -548,6 +601,13 @@ function humanitarianresponse_events_field_default_fields() {
           ),
           'type' => 'invisimail_js_entities',
           'weight' => '9',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'email',
+          'settings' => array(),
+          'type' => 'email_default',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -617,6 +677,13 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'text_default',
           'weight' => '7',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -685,6 +752,13 @@ function humanitarianresponse_events_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '8',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -761,6 +835,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'date_default',
           'weight' => '1',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'date',
@@ -836,6 +916,12 @@ function humanitarianresponse_events_field_default_fields() {
           ),
           'type' => 'geofield_openlayers',
           'weight' => '16',
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -925,6 +1011,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'file_default',
           'weight' => '5',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1002,6 +1094,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '13',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1070,6 +1168,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'hidden',
           'weight' => '17',
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1135,6 +1239,12 @@ function humanitarianresponse_events_field_default_fields() {
           'type' => 'hidden',
           'weight' => 1,
         ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'taxonomy_term',
       'field_name' => 'description_field',
@@ -1193,6 +1303,12 @@ function humanitarianresponse_events_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'ical' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
