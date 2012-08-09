@@ -258,6 +258,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = 1;
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
@@ -268,7 +269,8 @@ function humanitarianresponse_events_views_default_views() {
   $handler = $view->new_display('feed', 'iCal', 'calendar_ical');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Calendar';
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'date_ical';
   $handler->display->display_options['row_plugin'] = 'date_ical';
   $handler->display->display_options['row_options']['date_field'] = 'field_data_field_event_date.field_event_date_value';
