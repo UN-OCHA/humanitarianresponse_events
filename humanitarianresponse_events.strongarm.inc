@@ -90,7 +90,7 @@ function humanitarianresponse_events_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '15',
+          'weight' => '50',
         ),
       ),
       'display' => array(),
