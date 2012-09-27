@@ -87,7 +87,7 @@ function humanitarianresponse_events_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '30',
+        'weight' => '32',
       ),
     ),
   );
@@ -246,6 +246,77 @@ function humanitarianresponse_events_field_default_fields() {
         'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-event-field_countries'.
+  $fields['node-event-field_countries'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_countries',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'iso2' => array(
+          0 => 'iso2',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'countries',
+      'settings' => array(
+        'continents' => array(),
+        'countries' => array(),
+        'enabled' => '1',
+        'size' => 5,
+      ),
+      'translatable' => '0',
+      'type' => 'country',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'countries',
+          'settings' => array(),
+          'type' => 'country_default',
+          'weight' => 20,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_countries',
+      'label' => 'Countries',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'countries',
+        'settings' => array(),
+        'type' => 'countries_continent',
+        'weight' => '24',
       ),
     ),
   );
@@ -411,7 +482,7 @@ function humanitarianresponse_events_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '26',
+        'weight' => '28',
       ),
     ),
   );
@@ -966,7 +1037,7 @@ function humanitarianresponse_events_field_default_fields() {
           ),
         ),
         'type' => 'geocoder',
-        'weight' => '28',
+        'weight' => '30',
       ),
     ),
   );
@@ -1050,6 +1121,98 @@ function humanitarianresponse_events_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-event-field_linked_resources'.
+  $fields['node-event-field_linked_resources'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_linked_resources',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'event',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 21,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_linked_resources',
+      'label' => 'Linked Resources',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'user',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => FALSE,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '34',
+      ),
+    ),
+  );
+
   // Exported field: 'node-event-field_locations'.
   $fields['node-event-field_locations'] = array(
     'field_config' => array(
@@ -1122,7 +1285,7 @@ function humanitarianresponse_events_field_default_fields() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_hs',
-        'weight' => '24',
+        'weight' => '26',
       ),
     ),
   );
@@ -1428,9 +1591,11 @@ function humanitarianresponse_events_field_default_fields() {
   t('Contact Person');
   t('Contact Telephone');
   t('Coordination Hub(s)');
+  t('Countries');
   t('Date');
   t('Description');
   t('Emergencies');
+  t('Linked Resources');
   t('Location');
   t('Map');
   t('Minutes');

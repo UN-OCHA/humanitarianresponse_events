@@ -334,8 +334,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Calendar';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
@@ -432,6 +430,206 @@ function humanitarianresponse_events_views_default_views() {
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
   $handler->display->display_options['block_description'] = 'Calendar per term';
+
+  /* Display: Calendar per country */
+  $handler = $view->new_display('page', 'Calendar per country', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Calendar';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'date_views_pager';
+  $handler->display->display_options['pager']['options']['date_id'] = 'month';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['style_options']['name_size'] = '3';
+  $handler->display->display_options['style_options']['mini'] = '0';
+  $handler->display->display_options['style_options']['with_weekno'] = '0';
+  $handler->display->display_options['style_options']['multiday_theme'] = '1';
+  $handler->display->display_options['style_options']['theme_style'] = '1';
+  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['colors']['legend'] = 'taxonomy';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'document' => '#ffffff',
+    'event' => '#ffffff',
+    'link' => '#ffffff',
+    'map' => '#ffffff',
+    'news' => '#ffffff',
+    'page' => '#ffffff',
+  );
+  $handler->display->display_options['row_options']['colors']['taxonomy_field'] = 'field_event_category';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_vocabulary'] = array(
+    0 => 13,
+    1 => 13,
+    2 => 13,
+    3 => 13,
+  );
+  $handler->display->display_options['row_options']['colors']['calendar_colors_taxonomy'] = array(
+    17 => '#1862F3',
+    14 => '#ffffff',
+    15 => '#FF000D',
+    16 => '#F8FF00',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Category */
+  $handler->display->display_options['fields']['field_event_category']['id'] = 'field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['table'] = 'field_data_field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['field'] = 'field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['label'] = '';
+  $handler->display->display_options['fields']['field_event_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_category']['element_label_colon'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['breadcrumb_enable'] = TRUE;
+  $handler->display->display_options['arguments']['date_argument']['breadcrumb'] = '<none>';
+  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
+  );
+  $handler->display->display_options['path'] = 'countries/%/calendar';
+
+  /* Display: Block per country */
+  $handler = $view->new_display('block', 'Block per country', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Calendar';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'date_views_pager';
+  $handler->display->display_options['pager']['options']['date_id'] = 'month';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'calendar_style';
+  $handler->display->display_options['style_options']['calendar_type'] = 'week';
+  $handler->display->display_options['style_options']['name_size'] = '3';
+  $handler->display->display_options['style_options']['mini'] = '0';
+  $handler->display->display_options['style_options']['with_weekno'] = '0';
+  $handler->display->display_options['style_options']['multiday_theme'] = '1';
+  $handler->display->display_options['style_options']['theme_style'] = '1';
+  $handler->display->display_options['style_options']['max_items'] = '0';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['colors']['legend'] = 'taxonomy';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'assessment' => '#ffffff',
+    'contact' => '#ffffff',
+    'document' => '#ffffff',
+    'event' => '#ffffff',
+    'media_gallery' => '#ffffff',
+    'highlight' => '#ffffff',
+    'humanitarian_profile' => '#ffffff',
+    'indicator_registry' => '#ffffff',
+    'link' => '#ffffff',
+    'map' => '#ffffff',
+    'news' => '#ffffff',
+    'page' => '#ffffff',
+  );
+  $handler->display->display_options['row_options']['colors']['taxonomy_field'] = 'field_event_category';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_vocabulary'] = array(
+    0 => 14,
+  );
+  $handler->display->display_options['row_options']['colors']['calendar_colors_taxonomy'] = array(
+    20 => '#1862F3',
+    17 => '#ffffff',
+    18 => '#FF000D',
+    19 => '#F8FF00',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Category */
+  $handler->display->display_options['fields']['field_event_category']['id'] = 'field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['table'] = 'field_data_field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['field'] = 'field_event_category';
+  $handler->display->display_options['fields']['field_event_category']['label'] = '';
+  $handler->display->display_options['fields']['field_event_category']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_event_category']['element_label_colon'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['field'] = 'field_event_date';
+  $handler->display->display_options['fields']['field_event_date']['label'] = '';
+  $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '1',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'hide',
+  );
+  $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  /* Contextual filter: Date: Date (node) */
+  $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
+  $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
+  $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
+  $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
+  $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
+    'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
+  );
+  $handler->display->display_options['block_description'] = 'Calendar per country';
   $translatables['events'] = array(
     t('Master'),
     t('Events'),
@@ -459,6 +657,8 @@ function humanitarianresponse_events_views_default_views() {
     t('Calendar per term'),
     t('<none>'),
     t('Block per term'),
+    t('Calendar per country'),
+    t('Block per country'),
   );
   $export['events'] = $view;
 
@@ -561,6 +761,47 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
   $handler->display->display_options['block_description'] = 'Meeting Minutes per term';
+
+  /* Display: Meeting Minutes Per Country */
+  $handler = $view->new_display('page', 'Meeting Minutes Per Country', 'page_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  $handler->display->display_options['path'] = 'countries/%/meeting-minutes';
+
+  /* Display: Block per country */
+  $handler = $view->new_display('block', 'Block per country', 'block_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'page_2';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Countries (field_countries) */
+  $handler->display->display_options['arguments']['field_countries_iso2']['id'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['table'] = 'field_data_field_countries';
+  $handler->display->display_options['arguments']['field_countries_iso2']['field'] = 'field_countries_iso2';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_countries_iso2']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_countries_iso2']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_countries_iso2']['limit'] = '0';
+  $handler->display->display_options['block_description'] = 'Meeting Minutes per country';
   $translatables['meeting_minutes'] = array(
     t('Master'),
     t('Meeting Minutes'),
@@ -583,6 +824,9 @@ function humanitarianresponse_events_views_default_views() {
     t('All'),
     t('Block per term'),
     t('Meeting Minutes per term'),
+    t('Meeting Minutes Per Country'),
+    t('Block per country'),
+    t('Meeting Minutes per country'),
   );
   $export['meeting_minutes'] = $view;
 
