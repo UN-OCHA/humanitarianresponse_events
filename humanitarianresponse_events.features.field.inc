@@ -1150,6 +1150,9 @@ function humanitarianresponse_events_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_locations',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -1520,7 +1523,6 @@ function humanitarianresponse_events_field_default_fields() {
   t('Contact Person');
   t('Contact Telephone');
   t('Coordination Hub(s)');
-  t('Countries');
   t('Date');
   t('Description');
   t('Emergencies');
