@@ -43,6 +43,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the bottom of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
+<p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Field: Content: Title */
@@ -82,6 +83,26 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Cluster(s) (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Filter by Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['hierarchy'] = 1;
 
   /* Display: Month */
   $handler = $view->new_display('page', 'Month', 'page_1');
@@ -89,7 +110,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['name_size'] = '3';
@@ -129,7 +149,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'week';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['calendar_type'] = 'week';
@@ -167,7 +186,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'day';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['calendar_type'] = 'day';
@@ -204,7 +222,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'year';
-  $handler->display->display_options['pager']['options']['link_format'] = 'clean';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'calendar_style';
   $handler->display->display_options['style_options']['calendar_type'] = 'year';
@@ -295,6 +312,15 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 0;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: iCal */
   $handler = $view->new_display('feed', 'iCal', 'feed_1');
@@ -380,7 +406,9 @@ function humanitarianresponse_events_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the bottom of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
+<p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  '),
+    t('Filter by Cluster'),
     t('Month'),
     t('All'),
     t('Week'),

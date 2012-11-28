@@ -26,6 +26,7 @@ dependencies[] = humanitarianresponse_mapping
 dependencies[] = humanitarianresponse_themes
 dependencies[] = invisimail
 dependencies[] = link
+dependencies[] = print
 dependencies[] = strongarm
 dependencies[] = title
 dependencies[] = views
