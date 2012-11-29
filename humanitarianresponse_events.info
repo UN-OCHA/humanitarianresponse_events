@@ -22,6 +22,7 @@ dependencies[] = hr_print
 dependencies[] = hs_taxonomy
 dependencies[] = humanitarianresponse_clusters
 dependencies[] = humanitarianresponse_coordination
+dependencies[] = humanitarianresponse_core
 dependencies[] = humanitarianresponse_emergencies
 dependencies[] = humanitarianresponse_mapping
 dependencies[] = humanitarianresponse_themes
