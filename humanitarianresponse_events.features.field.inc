@@ -158,7 +158,7 @@ function humanitarianresponse_events_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_clusters',
-      'label' => 'Cluster(s)',
+      'label' => 'Clusters',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1518,7 +1518,7 @@ function humanitarianresponse_events_field_default_fields() {
   t('Agenda');
   t('Body');
   t('Category');
-  t('Cluster(s)');
+  t('Clusters');
   t('Contact Email');
   t('Contact Person');
   t('Contact Telephone');
