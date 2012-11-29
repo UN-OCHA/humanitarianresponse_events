@@ -89,7 +89,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Filter by Clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Filter by Cluster';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['remember_roles'] = array(
@@ -507,7 +507,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
-  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
   $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
@@ -872,21 +872,49 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title_field' => 'title_field',
+    'field_event_minutes' => 'field_event_minutes',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title_field' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_event_minutes' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'There are no meeting minutes';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
+  $handler->display->display_options['fields']['title_field']['label'] = 'Event';
+  $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
   /* Field: Content: Minutes */
   $handler->display->display_options['fields']['field_event_minutes']['id'] = 'field_event_minutes';
   $handler->display->display_options['fields']['field_event_minutes']['table'] = 'field_data_field_event_minutes';
   $handler->display->display_options['fields']['field_event_minutes']['field'] = 'field_event_minutes';
-  $handler->display->display_options['fields']['field_event_minutes']['label'] = '';
-  $handler->display->display_options['fields']['field_event_minutes']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_event_minutes']['label'] = 'Meeting Minutes';
   $handler->display->display_options['fields']['field_event_minutes']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_event_minutes']['type'] = 'file_custom_link';
+  $handler->display->display_options['fields']['field_event_minutes']['settings'] = array(
+    'format_custom_link_text' => 'Download',
+  );
+  $handler->display->display_options['fields']['field_event_minutes']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -958,6 +986,7 @@ function humanitarianresponse_events_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('There are no meeting minutes'),
+    t('Event'),
     t('Meeting Minutes Per Term'),
     t('more'),
     t('Items per page'),
