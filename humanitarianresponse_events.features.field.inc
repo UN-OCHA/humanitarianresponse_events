@@ -881,7 +881,7 @@ function humanitarianresponse_events_field_default_fields() {
           'label_position' => 'above',
           'repeat_collapsed' => 1,
           'text_parts' => array(),
-          'year_range' => '-0:+5',
+          'year_range' => '-5:+5',
         ),
         'type' => 'date_popup',
         'weight' => '2',
