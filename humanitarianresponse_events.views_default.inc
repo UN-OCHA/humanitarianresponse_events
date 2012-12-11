@@ -813,8 +813,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value']['table'] = 'field_data_field_event_date';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_event_date_value']['granularity'] = 'minute';
-  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_event_date_value']['default_date'] = 'now -1 day';
   $handler->display->display_options['block_description'] = 'Upcoming Events';
   $translatables['events'] = array(
     t('Master'),
