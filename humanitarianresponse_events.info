@@ -15,6 +15,7 @@ dependencies[] = date_views
 dependencies[] = ds
 dependencies[] = email
 dependencies[] = file
+dependencies[] = file_formatters
 dependencies[] = geocoder
 dependencies[] = geofield
 dependencies[] = hr_mapping_styles
