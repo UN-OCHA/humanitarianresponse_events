@@ -563,7 +563,7 @@ function humanitarianresponse_events_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_event_category',
-      'label' => 'Category',
+      'label' => 'Event Category',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -1527,7 +1527,7 @@ function humanitarianresponse_events_field_default_fields() {
   t('Address');
   t('Agenda');
   t('Body');
-  t('Category');
+  t('Event Category');
   t('Clusters');
   t('Contact Email');
   t('Contact Person');
