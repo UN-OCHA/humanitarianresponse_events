@@ -35,7 +35,9 @@ function humanitarianresponse_events_field_default_fields() {
       ),
       'locked' => '0',
       'module' => 'text',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '1',
       'type' => 'text_with_summary',
     ),
@@ -77,6 +79,7 @@ function humanitarianresponse_events_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'entity_translation_sync' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -125,6 +128,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -161,6 +165,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Clusters',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -203,6 +208,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -238,6 +244,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Coordination Hub',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -283,6 +290,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -318,6 +326,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Emergencies',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -342,7 +351,9 @@ function humanitarianresponse_events_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'addressfield',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'addressfield',
     ),
@@ -396,6 +407,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Address',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -445,6 +457,9 @@ function humanitarianresponse_events_field_default_fields() {
       'settings' => array(
         'display_default' => 0,
         'display_field' => 0,
+        'entity_translation_sync' => array(
+          0 => 'fid',
+        ),
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -483,6 +498,7 @@ function humanitarianresponse_events_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
+        'entity_translation_sync' => FALSE,
         'file_directory' => 'events/agendas',
         'file_extensions' => 'pdf doc docx odt',
         'max_filesize' => '',
@@ -492,6 +508,20 @@ function humanitarianresponse_events_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(),
+            'source_attach' => array(
+              'absolute' => 0,
+              'attach_mode' => 'move',
+              'path' => 'file_attach',
+            ),
+            'source_imce' => array(
+              'imce_mode' => 0,
+            ),
+            'source_reference' => array(
+              'autocomplete' => '0',
+            ),
+          ),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -530,6 +560,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -566,6 +597,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Event Category',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -590,7 +622,9 @@ function humanitarianresponse_events_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'email',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'email',
     ),
@@ -629,6 +663,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Contact Email',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -667,6 +702,7 @@ function humanitarianresponse_events_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => '255',
       ),
       'translatable' => '0',
@@ -704,6 +740,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Contact Person',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -743,6 +780,7 @@ function humanitarianresponse_events_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => '255',
       ),
       'translatable' => '0',
@@ -780,6 +818,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Contact Telephone',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -808,6 +847,7 @@ function humanitarianresponse_events_field_default_fields() {
       'locked' => '0',
       'module' => 'date',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'granularity' => array(
           'day' => 'day',
           'hour' => 'hour',
@@ -873,6 +913,7 @@ function humanitarianresponse_events_field_default_fields() {
         'default_value2' => 'blank',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -906,7 +947,9 @@ function humanitarianresponse_events_field_default_fields() {
       'indexes' => array(),
       'locked' => '0',
       'module' => 'geofield',
-      'settings' => array(),
+      'settings' => array(
+        'entity_translation_sync' => FALSE,
+      ),
       'translatable' => '0',
       'type' => 'geofield',
     ),
@@ -943,6 +986,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Map',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'local_solr' => array(
           'enabled' => FALSE,
           'lat_field' => 'lat',
@@ -1005,6 +1049,9 @@ function humanitarianresponse_events_field_default_fields() {
       'settings' => array(
         'display_default' => 0,
         'display_field' => 0,
+        'entity_translation_sync' => array(
+          0 => 'fid',
+        ),
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -1043,6 +1090,7 @@ function humanitarianresponse_events_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
+        'entity_translation_sync' => FALSE,
         'file_directory' => 'events/minutes',
         'file_extensions' => 'pdf doc docx odt',
         'max_filesize' => '',
@@ -1052,6 +1100,20 @@ function humanitarianresponse_events_field_default_fields() {
         'active' => 1,
         'module' => 'file',
         'settings' => array(
+          'filefield_sources' => array(
+            'filefield_sources' => array(),
+            'source_attach' => array(
+              'absolute' => 0,
+              'attach_mode' => 'move',
+              'path' => 'file_attach',
+            ),
+            'source_imce' => array(
+              'imce_mode' => 0,
+            ),
+            'source_reference' => array(
+              'autocomplete' => '0',
+            ),
+          ),
           'progress_indicator' => 'throbber',
         ),
         'type' => 'file_generic',
@@ -1085,6 +1147,7 @@ function humanitarianresponse_events_field_default_fields() {
           'url_cutoff' => 80,
         ),
         'enable_tokens' => 1,
+        'entity_translation_sync' => FALSE,
         'title' => 'optional',
         'title_maxlength' => 128,
         'title_value' => '',
@@ -1135,6 +1198,7 @@ function humanitarianresponse_events_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'entity_translation_sync' => FALSE,
         'title' => 'optional',
         'title_maxlength' => '128',
         'title_value' => '',
@@ -1185,6 +1249,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -1220,6 +1285,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Location',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1265,6 +1331,7 @@ function humanitarianresponse_events_field_default_fields() {
             'parent' => '0',
           ),
         ),
+        'entity_translation_sync' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -1300,6 +1367,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Themes',
       'required' => 0,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1339,6 +1407,7 @@ function humanitarianresponse_events_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => 255,
       ),
       'translatable' => '1',
@@ -1374,6 +1443,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Title',
       'required' => TRUE,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),
@@ -1412,6 +1482,7 @@ function humanitarianresponse_events_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'max_length' => 255,
       ),
       'translatable' => '1',
@@ -1441,6 +1512,7 @@ function humanitarianresponse_events_field_default_fields() {
       'label' => 'Name',
       'required' => TRUE,
       'settings' => array(
+        'entity_translation_sync' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),
@@ -1460,15 +1532,14 @@ function humanitarianresponse_events_field_default_fields() {
   t('Address');
   t('Agenda');
   t('Body');
-  t('Event Category');
   t('Clusters');
   t('Contact Email');
   t('Contact Person');
   t('Contact Telephone');
   t('Coordination Hub');
   t('Date');
-  t('Description');
   t('Emergencies');
+  t('Event Category');
   t('Linked Resources');
   t('Location');
   t('Map');

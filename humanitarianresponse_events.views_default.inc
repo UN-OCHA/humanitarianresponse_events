@@ -587,7 +587,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Category */
+  /* Field: Content: Event Category */
   $handler->display->display_options['fields']['field_event_category']['id'] = 'field_event_category';
   $handler->display->display_options['fields']['field_event_category']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['fields']['field_event_category']['field'] = 'field_event_category';
@@ -691,7 +691,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Category */
+  /* Field: Content: Event Category */
   $handler->display->display_options['fields']['field_event_category']['id'] = 'field_event_category';
   $handler->display->display_options['fields']['field_event_category']['table'] = 'field_data_field_event_category';
   $handler->display->display_options['fields']['field_event_category']['field'] = 'field_event_category';
