@@ -4,3 +4,10 @@
  */
 
 include_once('humanitarianresponse_events.features.inc');
+
+/**
+ * Implements hook_cron()
+ */
+function humanitarianresponse_events_cron() {
+  humanitarianresponse_core_feeds_check('csv_event_categories', 'http://terms.humanitarianresponse.info/event-categories.csv');
+}
