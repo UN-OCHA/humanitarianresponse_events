@@ -13,9 +13,9 @@ function humanitarianresponse_events_taxonomy_default_vocabularies() {
       'name' => 'Event categories',
       'machine_name' => 'event_categories',
       'description' => 'Organize events in categories',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
