@@ -38,6 +38,48 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['style_options']['theme_style'] = '1';
   $handler->display->display_options['style_options']['max_items'] = '0';
   $handler->display->display_options['row_plugin'] = 'calendar_entity';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'title' => 'title',
+    'field_event_date' => 'field_event_date',
+    'field_clusters' => 'field_clusters',
+  );
+  $handler->display->display_options['row_options']['calendar_date_link'] = 'event';
+  $handler->display->display_options['row_options']['colors']['legend'] = 'taxonomy';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_type'] = array(
+    'assessment' => '#ffffff',
+    'contact' => '#ffffff',
+    'document' => '#ffffff',
+    'event' => '#ffffff',
+    'gallery' => '#ffffff',
+    'highlight' => '#ffffff',
+    'humanitarian_profile' => '#ffffff',
+    'incident' => '#ffffff',
+    'link' => '#ffffff',
+    'news' => '#ffffff',
+    'page' => '#ffffff',
+    'map' => '#ffffff',
+  );
+  $handler->display->display_options['row_options']['colors']['taxonomy_field'] = 'field_clusters';
+  $handler->display->display_options['row_options']['colors']['calendar_colors_vocabulary'] = array(
+    'field_clusters' => '3',
+  );
+  $handler->display->display_options['row_options']['colors']['calendar_colors_taxonomy'] = array(
+    21 => '#46dc50',
+    22 => '#2553c0',
+    23 => '#de143f',
+    24 => '#ffffff',
+    25 => '#ffffff',
+    26 => '#25ed15',
+    27 => '#f44647',
+    28 => '#ffffff',
+    29 => '#f261cb',
+    30 => '#ece443',
+    31 => '#ffffff',
+    32 => '#ffffff',
+    33 => '#ffffff',
+    34 => '#ffffff',
+    35 => '#ffffff',
+  );
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -46,6 +88,15 @@ function humanitarianresponse_events_views_default_views() {
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['label'] = 'Legend';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = '<div id="legend"><span style="color:#de143f">&#9632;</span> Cluster Education &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#0088e8">&#9632;</span>Cluster WASH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#25ed15">&#9632;</span>Cluster Food security &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#f44647">&#9632;</span>Cluster Health &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#f261cb">&#9632;</span>Cluster Nutrition &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#ece443">&#9632;</span>Cluster Protection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<div style="clear:both"></div>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -54,6 +105,8 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'testclass';
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_event_date']['id'] = 'field_event_date';
@@ -72,6 +125,11 @@ function humanitarianresponse_events_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
+  /* Field: Content: Clusters */
+  $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['delta_offset'] = '0';
   /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
@@ -103,6 +161,25 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['hierarchy'] = 1;
+  /* Filter criterion: Content: Coordination Hub (field_coordination_hubs) */
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['id'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['table'] = 'field_data_field_coordination_hubs';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['field'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator_id'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['label'] = 'Coordination Hub ';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['identifier'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['vocabulary'] = 'coordination_hubs';
 
   /* Display: Month */
   $handler = $view->new_display('page', 'Month', 'page_1');
@@ -110,19 +187,6 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'date_views_pager';
   $handler->display->display_options['pager']['options']['date_id'] = 'month';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'calendar_style';
-  $handler->display->display_options['style_options']['name_size'] = '3';
-  $handler->display->display_options['style_options']['mini'] = '0';
-  $handler->display->display_options['style_options']['with_weekno'] = '0';
-  $handler->display->display_options['style_options']['multiday_theme'] = '1';
-  $handler->display->display_options['style_options']['theme_style'] = '1';
-  $handler->display->display_options['style_options']['max_items'] = '0';
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'calendar_entity';
-  $handler->display->display_options['row_options']['colors']['legend'] = 'type';
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Date: Date (node) */
   $handler->display->display_options['arguments']['date_argument']['id'] = 'date_argument';
@@ -529,7 +593,12 @@ function humanitarianresponse_events_views_default_views() {
     t('<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the bottom of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  '),
+    t('Legend'),
+    t('<div id="legend"><span style="color:#de143f">&#9632;</span> Cluster Education &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#0088e8">&#9632;</span>Cluster WASH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#25ed15">&#9632;</span>Cluster Food security &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#f44647">&#9632;</span>Cluster Health &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#f261cb">&#9632;</span>Cluster Nutrition &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="color:#ece443">&#9632;</span>Cluster Protection &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<div style="clear:both"></div>'),
+    t('Clusters'),
     t('Filter by Cluster'),
+    t('Coordination Hub '),
     t('Month'),
     t('All'),
     t('Week'),
