@@ -603,7 +603,7 @@ function humanitarianresponse_events_views_default_views() {
     t('Upcoming events block'),
     t('Upcoming per term'),
     t('There are no upcoming events'),
-    t('Upcoming Events per term')
+    t('Upcoming Events per term'),
     t('Calendar per term'),
     t('Calendar Block per term'),
     t('Calendar block per term'),
