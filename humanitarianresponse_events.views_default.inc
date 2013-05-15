@@ -42,7 +42,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the bottom of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
+  $handler->display->display_options['header']['area']['content'] = '<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the top of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
@@ -103,6 +103,25 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['hierarchy'] = 1;
+  /* Filter criterion: Field: Coordination Hub (field_coordination_hubs) */
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['id'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['table'] = 'field_data_field_coordination_hubs';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['field'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator_id'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['label'] = 'Filter by Coordination Hub';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['identifier'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['vocabulary'] = 'coordination_hubs';
 
   /* Display: Month */
   $handler = $view->new_display('page', 'Month', 'page_1');
@@ -587,7 +606,7 @@ function humanitarianresponse_events_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the bottom of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
+    t('<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the top of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  '),
     t('Filter by Cluster'),
