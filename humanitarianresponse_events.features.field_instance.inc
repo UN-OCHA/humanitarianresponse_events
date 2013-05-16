@@ -1005,6 +1005,56 @@ function humanitarianresponse_events_field_default_field_instances() {
       'weight' => -6,
     ),
   );
+  
+  // Exported field_instance: 'node-event-field_fundings'
+  $field_instances['node-event-field_fundings'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'entityreference_view_widget' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'ical' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fundings',
+    'label' => 'Funding',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
+    ),
+  );
 
   // Translatables
   // Included for use with string extractors like potx.
@@ -1027,6 +1077,7 @@ function humanitarianresponse_events_field_default_field_instances() {
   t('Name');
   t('Themes');
   t('Title');
+  t('Funding');
 
   return $field_instances;
 }
