@@ -83,7 +83,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Clusters (field_clusters) */
+  /* Filter criterion: Field: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
@@ -375,17 +375,22 @@ function humanitarianresponse_events_views_default_views() {
   );
   $handler->display->display_options['path'] = 'coordination/calendar/ical/calendar.ics';
   $handler->display->display_options['displays'] = array(
-    'page' => 'page',
     'page_1' => 'page_1',
     'page_2' => 'page_2',
     'page_3' => 'page_3',
-    'block_1' => 'block_1',
-    'block_2' => 'block_2',
+    'page' => 'page',
     'default' => 0,
+    'block_1' => 0,
+    'block_2' => 0,
+    'page_4' => 0,
+    'block_3' => 0,
+    'block_4' => 0,
   );
 
   /* Display: Upcoming */
   $handler = $view->new_display('block', 'Upcoming', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Upcoming Events';
   $handler->display->display_options['display_description'] = 'Upcoming events block';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -537,7 +542,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 0;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $handler->display->display_options['block_description'] = 'Calendar block per term';
-  
+
   /* Display: Upcoming per term */
   $handler = $view->new_display('block', 'Upcoming per term', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
@@ -597,7 +602,6 @@ function humanitarianresponse_events_views_default_views() {
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
   $handler->display->display_options['block_description'] = 'Upcoming Events per term';
-  
   $translatables['calendar'] = array(
     t('Master'),
     t('more'),
@@ -610,6 +614,7 @@ function humanitarianresponse_events_views_default_views() {
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  '),
     t('Filter by Cluster'),
+    t('Filter by Coordination Hub'),
     t('Month'),
     t('All'),
     t('Week'),
@@ -620,12 +625,12 @@ function humanitarianresponse_events_views_default_views() {
     t('Upcoming'),
     t('Upcoming Events'),
     t('Upcoming events block'),
-    t('Upcoming per term'),
-    t('There are no upcoming events'),
-    t('Upcoming Events per term'),
     t('Calendar per term'),
     t('Calendar Block per term'),
     t('Calendar block per term'),
+    t('Upcoming per term'),
+    t('There are no upcoming events'),
+    t('Upcoming Events per term'),
   );
   $export['calendar'] = $view;
 
@@ -709,7 +714,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
-  /* Filter criterion: Content: Clusters (field_clusters) */
+  /* Filter criterion: Field: Clusters (field_clusters) */
   $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
   $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
   $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
@@ -1109,7 +1114,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['content'] = 'There are no meeting minutes';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: Content: Title */
+  /* Field: Field: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
