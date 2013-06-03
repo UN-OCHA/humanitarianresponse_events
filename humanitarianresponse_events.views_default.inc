@@ -605,7 +605,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['block_description'] = 'Upcoming Events per term';
   $translatables['calendar'] = array(
     t('Master'),
-    t('more'),
+    t('View all'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
@@ -617,6 +617,7 @@ function humanitarianresponse_events_views_default_views() {
     t('Filter by Cluster'),
     t('Filter by Coordination Hub'),
     t('Month'),
+    t('more'),
     t('All'),
     t('Week'),
     t('Day'),
@@ -1132,11 +1133,11 @@ function humanitarianresponse_events_views_default_views() {
     'format_custom_link_text' => 'Download',
   );
   $handler->display->display_options['fields']['field_event_minutes']['delta_offset'] = '0';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Date -  start date (field_event_date) */
+  $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
+  $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
+  $handler->display->display_options['sorts']['field_event_date_value']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -1151,6 +1152,12 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
+  /* Filter criterion: Content: Minutes (field_event_minutes:delta) */
+  $handler->display->display_options['filters']['delta']['id'] = 'delta';
+  $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_event_minutes';
+  $handler->display->display_options['filters']['delta']['field'] = 'delta';
+  $handler->display->display_options['filters']['delta']['operator'] = '>=';
+  $handler->display->display_options['filters']['delta']['value']['value'] = '0';
 
   /* Display: Meeting Minutes Per Term */
   $handler = $view->new_display('page', 'Meeting Minutes Per Term', 'page_1');
