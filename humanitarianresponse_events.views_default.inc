@@ -407,6 +407,14 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no upcoming events';
+  $handler->display->display_options['empty']['area']['format'] = 'simple';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -627,11 +635,11 @@ function humanitarianresponse_events_views_default_views() {
     t('Upcoming'),
     t('Upcoming Events'),
     t('Upcoming events block'),
+    t('There are no upcoming events'),
     t('Calendar per term'),
     t('Calendar Block per term'),
     t('Calendar block per term'),
     t('Upcoming per term'),
-    t('There are no upcoming events'),
     t('Upcoming Events per term'),
   );
   $export['calendar'] = $view;
