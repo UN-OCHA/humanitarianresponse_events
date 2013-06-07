@@ -117,6 +117,9 @@ function humanitarianresponse_events_strongarm() {
         'path' => array(
           'weight' => '50',
         ),
+        'language' => array(
+          'weight' => '-2',
+        ),
       ),
       'display' => array(),
     ),
