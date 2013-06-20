@@ -19,8 +19,8 @@ function humanitarianresponse_events_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'coordination/calendar' => 'coordination/calendar',
-        'coordination/calendar/*' => 'coordination/calendar/*',
+        'calendar' => 'calendar',
+        'calendar/*' => 'calendar/*',
       ),
     ),
   );
