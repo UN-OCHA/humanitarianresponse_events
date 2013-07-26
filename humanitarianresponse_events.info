@@ -107,7 +107,6 @@ features[variable][] = node_options_event
 features[variable][] = node_preview_event
 features[variable][] = node_submitted_event
 features[views_view][] = calendar
-features[views_view][] = events
 features[views_view][] = meeting_minutes
 features_exclude[field][taxonomy_term-event_categories-name_field] = taxonomy_term-event_categories-name_field
 features_exclude[field][node-event-body] = node-event-body
