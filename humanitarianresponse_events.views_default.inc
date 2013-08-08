@@ -596,9 +596,9 @@ function humanitarianresponse_events_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Meeting Minutes';
   $handler->display->display_options['use_ajax'] = TRUE;
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -676,37 +676,17 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['delta']['operator'] = '>=';
   $handler->display->display_options['filters']['delta']['value']['value'] = '0';
 
-  /* Display: Meeting Minutes Per Term */
-  $handler = $view->new_display('page', 'Meeting Minutes Per Term', 'page_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Has taxonomy term ID */
-  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'taxonomy_tid';
-  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
-  $handler->display->display_options['path'] = 'taxonomy/term/%/meeting-minutes';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'Meeting Minutes';
-  $handler->display->display_options['menu']['weight'] = '8';
-  $handler->display->display_options['menu']['context'] = 0;
-
   /* Display: Block per term */
   $handler = $view->new_display('block', 'Block per term', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'View all';
+  $handler->display->display_options['link_url'] = 'search/type/event/!2/!1';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -720,6 +700,19 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'ignore';
+  /* Contextual filter: Global: Null */
+  $handler->display->display_options['arguments']['null']['id'] = 'null';
+  $handler->display->display_options['arguments']['null']['table'] = 'views';
+  $handler->display->display_options['arguments']['null']['field'] = 'null';
+  $handler->display->display_options['arguments']['null']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['null']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['null']['default_argument_options']['code'] = '$tid = $view->args[0];
+$term = taxonomy_term_load($tid);
+$voc = taxonomy_vocabulary_load($term->vid);
+return $voc->machine_name;';
+  $handler->display->display_options['arguments']['null']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['null']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['null']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['block_description'] = 'Meeting Minutes per term';
   $translatables['meeting_minutes'] = array(
     t('Master'),
@@ -732,17 +725,8 @@ function humanitarianresponse_events_views_default_views() {
     t('Desc'),
     t('There are no meeting minutes'),
     t('Event'),
-    t('Meeting Minutes Per Term'),
-    t('more'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('All'),
     t('Block per term'),
+    t('All'),
     t('Meeting Minutes per term'),
   );
   $export['meeting_minutes'] = $view;
