@@ -23,7 +23,7 @@ function humanitarianresponse_events_ds_field_settings_info() {
       'format' => 'default',
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -33,7 +33,7 @@ function humanitarianresponse_events_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -63,7 +63,12 @@ function humanitarianresponse_events_ds_layout_settings_info() {
         1 => 'title',
         2 => 'field_event_date',
         3 => 'body',
-        4 => 'node_link',
+        4 => 'field_event_minutes',
+        5 => 'field_event_agenda',
+        6 => 'field_event_contact_person',
+        7 => 'field_event_contact_email',
+        8 => 'field_event_contact_telephone',
+        9 => 'node_link',
       ),
     ),
     'fields' => array(
@@ -71,6 +76,11 @@ function humanitarianresponse_events_ds_layout_settings_info() {
       'title' => 'ds_content',
       'field_event_date' => 'ds_content',
       'body' => 'ds_content',
+      'field_event_minutes' => 'ds_content',
+      'field_event_agenda' => 'ds_content',
+      'field_event_contact_person' => 'ds_content',
+      'field_event_contact_email' => 'ds_content',
+      'field_event_contact_telephone' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
