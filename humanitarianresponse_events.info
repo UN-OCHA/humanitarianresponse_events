@@ -80,7 +80,6 @@ features[field_instance][] = node-event-field_event_date
 features[field_instance][] = node-event-field_event_map
 features[field_instance][] = node-event-field_event_minutes
 features[field_instance][] = node-event-field_fundings
-features[field_instance][] = node-event-field_keywords
 features[field_instance][] = node-event-field_linked_resources
 features[field_instance][] = node-event-field_locations
 features[field_instance][] = node-event-field_themes
