@@ -899,11 +899,12 @@ function humanitarianresponse_events_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'ds',
+        'module' => 'taxonomy',
         'settings' => array(
           'taxonomy_term_link' => 0,
           'taxonomy_term_separator' => ', ',
         ),
+        'type' => 'taxonomy_term_reference_link',
         'weight' => 22,
       ),
       'ical' => array(
