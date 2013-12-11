@@ -73,36 +73,6 @@ function humanitarianresponse_events_views_default_views() {
   );
   $handler->display->display_options['fields']['field_event_date']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['delta_offset'] = '0';
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_event_address']['id'] = 'field_event_address';
-  $handler->display->display_options['fields']['field_event_address']['table'] = 'field_data_field_event_address';
-  $handler->display->display_options['fields']['field_event_address']['field'] = 'field_event_address';
-  $handler->display->display_options['fields']['field_event_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_event_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_event_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
-    ),
-  );
-  /* Field: Content: Contact Person */
-  $handler->display->display_options['fields']['field_event_contact_person']['id'] = 'field_event_contact_person';
-  $handler->display->display_options['fields']['field_event_contact_person']['table'] = 'field_data_field_event_contact_person';
-  $handler->display->display_options['fields']['field_event_contact_person']['field'] = 'field_event_contact_person';
-  $handler->display->display_options['fields']['field_event_contact_person']['label'] = '';
-  $handler->display->display_options['fields']['field_event_contact_person']['element_label_colon'] = FALSE;
-  /* Field: Content: Contact Telephone */
-  $handler->display->display_options['fields']['field_event_contact_telephone']['id'] = 'field_event_contact_telephone';
-  $handler->display->display_options['fields']['field_event_contact_telephone']['table'] = 'field_data_field_event_contact_telephone';
-  $handler->display->display_options['fields']['field_event_contact_telephone']['field'] = 'field_event_contact_telephone';
-  $handler->display->display_options['fields']['field_event_contact_telephone']['label'] = '';
-  $handler->display->display_options['fields']['field_event_contact_telephone']['element_label_colon'] = FALSE;
-  /* Field: Content: Contact Email */
-  $handler->display->display_options['fields']['field_event_contact_email']['id'] = 'field_event_contact_email';
-  $handler->display->display_options['fields']['field_event_contact_email']['table'] = 'field_data_field_event_contact_email';
-  $handler->display->display_options['fields']['field_event_contact_email']['field'] = 'field_event_contact_email';
-  $handler->display->display_options['fields']['field_event_contact_email']['label'] = '';
-  $handler->display->display_options['fields']['field_event_contact_email']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Date -  start date (field_event_date) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
   $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'field_data_field_event_date';
@@ -591,7 +561,6 @@ function humanitarianresponse_events_views_default_views() {
     t('<p style="text-align: center;">Please note that you can synchronize your own electronic agenda with this calendar page (and therefore have the meetings displayed on this calendar page directly in your Google Calendar / Lotus Notes / Outlook / Thunderbird / ICal) by using the "ICal" link at the top of this page which provides this calendar in the <a href="http://en.wikipedia.org/wiki/ICalendar">ICalendar</a> format.</p>
 <p style="text-align: center;">If you need help in order to add the agenda to your electronic agenda, <a href="http://help.humanitarianresponse.info/manage-content/manage-events/sync-ical-feed">click here</a> to get detailed instructions.</p>
  '),
-    t('Address'),
     t('Filter by Cluster'),
     t('Filter by Coordination Hub'),
     t('Month'),
