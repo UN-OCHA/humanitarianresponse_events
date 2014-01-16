@@ -179,6 +179,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
@@ -219,6 +220,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'week';
@@ -257,6 +259,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
@@ -321,6 +324,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'year';
@@ -361,6 +365,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -404,6 +409,52 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'field_data_field_event_date.field_event_date_value' => 'field_data_field_event_date.field_event_date_value',
   );
+  /* Filter criterion: Field: Clusters (field_clusters) */
+  $handler->display->display_options['filters']['field_clusters_tid']['id'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['table'] = 'field_data_field_clusters';
+  $handler->display->display_options['filters']['field_clusters_tid']['field'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator_id'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['label'] = 'Cluster';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['operator'] = 'field_clusters_tid_op';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['identifier'] = 'field_clusters_tid';
+  $handler->display->display_options['filters']['field_clusters_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+    147444660 => 0,
+    229782242 => 0,
+  );
+  $handler->display->display_options['filters']['field_clusters_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_clusters_tid']['vocabulary'] = 'clusters';
+  /* Filter criterion: Field: Coordination Hub (field_coordination_hubs) */
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['id'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['table'] = 'field_data_field_coordination_hubs';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['field'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator_id'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['label'] = 'Coordination Hub';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['operator'] = 'field_coordination_hubs_tid_op';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['identifier'] = 'field_coordination_hubs_tid';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+    147444660 => 0,
+    229782242 => 0,
+  );
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_coordination_hubs_tid']['vocabulary'] = 'coordination_hubs';
   $handler->display->display_options['path'] = 'calendar/ical/calendar.ics';
   $handler->display->display_options['displays'] = array(
     'page_1' => 'page_1',
@@ -505,6 +556,7 @@ function humanitarianresponse_events_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['table'] = 'node';
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
   $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['date_argument']['add_delta'] = 'yes';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
@@ -602,6 +654,8 @@ function humanitarianresponse_events_views_default_views() {
     t('Year'),
     t('Block'),
     t('iCal'),
+    t('Cluster'),
+    t('Coordination Hub'),
     t('Upcoming'),
     t('Upcoming Events'),
     t('Upcoming events block'),
